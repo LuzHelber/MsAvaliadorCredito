@@ -1,5 +1,6 @@
 package br.com.helber.msavaliadorcredito.infra.clients;
 
+import br.com.helber.msavaliadorcredito.domain.model.Cartao;
 import br.com.helber.msavaliadorcredito.domain.model.CartaoCliente;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +13,8 @@ import java.util.List;
 public interface CartoesResourceClient {
 
     @GetMapping(params = "cpf")
-    ResponseEntity<List<CartaoCliente>> getCartoesByCliente (
-            @RequestParam("cpf")String cpf);
+    ResponseEntity<List<CartaoCliente>> getCartoesByCliente (@RequestParam("cpf")String cpf);
+
+    @GetMapping(params = "renda")
+    ResponseEntity<List<Cartao>> getCartoesRendaAteh(@RequestParam("renda") Long renda);
 }

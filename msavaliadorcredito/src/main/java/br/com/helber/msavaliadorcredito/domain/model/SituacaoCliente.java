@@ -12,6 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class SituacaoCliente {
-    private DadosCleinte cliente;
+    private DadosCliente cliente;
     private List<CartaoCliente> cartoes;
 }
